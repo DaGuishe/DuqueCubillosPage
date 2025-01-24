@@ -1,0 +1,33 @@
+<div class="bg-[#011a3e] text-white py-16 px-6 lg:px-20">
+  <!-- Título y subtítulo -->
+  <div class="text-center mb-12">
+    <h2 class="text-4xl lg:text-6xl font-serif font-bold mb-4 tracking-wide">
+      CAMPOS DE EXPERIENCIA
+    </h2>
+    <p class="text-lg lg:text-xl text-[#e1c37e]">
+      NUESTRA VISIÓN ES LO QUE NOS DEFINE
+    </p>
+  </div>
+
+  <!-- Lista de campos -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div
+      *ngFor="let campo of campos"
+      class="flex justify-between items-center border-b border-[#e1c37e] pb-4"
+    >
+      <!-- Título del campo -->
+      <div>
+        <h3 class="text-xl lg:text-2xl font-medium">{{ campo.titulo }}</h3>
+        <div class="w-20 h-[3px] bg-[#e1c37e] mt-2"></div>
+      </div>
+
+      <!-- Enlace de acción -->
+      <a
+        href="{{ campo.link }}"
+        class="text-sm lg:text-base text-[#e1c37e] hover:text-[#ffd966] flex items-center"
+      >
+        APRENDE MÁS <span class="ml-2 text-lg">&#8594;</span>
+      </a>
+    </div>
+  </div>
+</div>
