@@ -1,1 +1,82 @@
-<p>pagcita works!</p>
+<form
+  #form="ngForm"
+  (ngSubmit)="submitForm(form)"
+  class="max-w-3xl mx-auto bg-cover bg-center bg-no-repeat px-4 sm:px-6 py-[44px]"
+  style="background-image: url('/src/app/shared/images/imagenfondo.png'); min-height: 600px;"
+>
+  <!-- Título principal -->
+  <h2 class="text-center text-3xl sm:text-4xl md:text-5xl font-bitter font-semibold text-[#1C1C1C] mb-4 bg-white/70 p-2 rounded">
+    REALIZA UNA CITA
+  </h2>
+  <p class="text-center text-base sm:text-lg md:text-xl text-[#D4AF37] mb-8 font-roboto font-semibold bg-white/70 p-2 rounded">
+    NOS ENCANTARÍA TRABAJAR EN TU CASO
+  </p>
+
+  <!-- Línea decorativa -->
+  <div class="flex items-center justify-center mb-8">
+    <span class="h-px w-8 sm:w-12 bg-[#D4AF37]"></span>
+    <span class="mx-2 sm:mx-4 text-[#D4AF37] text-xs sm:text-sm">✦</span>
+    <span class="h-px w-8 sm:w-12 bg-[#D4AF37]"></span>
+  </div>
+
+  <!-- Formulario -->
+  <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 bg-white/70 p-6 rounded">
+    <!-- Nombre Completo -->
+    <div class="col-span-1 sm:col-span-2">
+      <input
+        type="text"
+        [(ngModel)]="formData.nombre"
+        name="nombre"
+        class="placeholder-italic block w-full border-0 border-b border-[#D4AF37] focus:outline-none focus:ring-0 text-[#1C1C1C] px-2 py-2 bg-transparent placeholder:text-[#A3A3A3] placeholder:opacity-100 focus:placeholder:opacity-0 transition duration-400 text-sm sm:text-base"
+        placeholder="Nombre Completo"
+        required
+      />
+    </div>
+
+    <!-- Número Telefónico -->
+    <div>
+      <input
+        type="tel"
+        [(ngModel)]="formData.telefono"
+        name="telefono"
+        class="placeholder-italic block w-full border-0 border-b border-[#D4AF37] focus:outline-none focus:ring-0 text-[#1C1C1C] px-2 py-2 bg-transparent placeholder:text-[#A3A3A3] placeholder:opacity-100 focus:placeholder:opacity-0 transition duration-400 text-sm sm:text-base"
+        placeholder="Número Telefónico"
+        required
+      />
+    </div>
+
+    <!-- Email -->
+    <div>
+      <input
+        type="email"
+        [(ngModel)]="formData.email"
+        name="email"
+        class="placeholder-italic block w-full border-0 border-b border-[#D4AF37] focus:outline-none focus:ring-0 text-[#1C1C1C] px-2 py-2 bg-transparent placeholder:text-[#A3A3A3] placeholder:opacity-100 focus:placeholder:opacity-0 transition duration-400 text-sm sm:text-base"
+        placeholder="Correo Electrónico"
+        required
+      />
+    </div>
+
+    <!-- Mensaje -->
+    <div class="col-span-1 sm:col-span-2">
+      <input
+        type="text"
+        [(ngModel)]="formData.mensaje"
+        name="mensaje"
+        class="placeholder-italic block w-full border-0 border-b border-[#D4AF37] focus:outline-none focus:ring-0 text-[#1C1C1C] px-2 py-2 bg-transparent placeholder:text-[#A3A3A3] placeholder:opacity-100 focus:placeholder:opacity-0 transition duration-400 text-sm sm:text-base"
+        placeholder="Escribe tu mensaje aquí"
+        required
+      />
+    </div>
+  </div>
+
+  <!-- Botón de envío -->
+  <div class="flex justify-center mt-8">
+    <button
+      type="submit"
+      class="bg-transparent text-[#1C1C1C] border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white transition font-medium px-6 sm:px-8 py-2 sm:py-3 rounded-md text-sm sm:text-base"
+    >
+      SOLICITA UNA CITA CON NOSOTROS
+    </button>
+  </div>
+</form>

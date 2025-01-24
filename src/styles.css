@@ -6,3 +6,8 @@
 body {
   @apply font-poppins; /* Aplica la fuente "Roboto" globalmente */
 }
+
+@font-face {
+  font-family: 'karstar';
+  src: url('/src/app/shared/fonts/Karstar.ttf') format('truetype');
+}

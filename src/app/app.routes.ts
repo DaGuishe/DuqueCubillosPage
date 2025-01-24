@@ -1,6 +1,9 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from './shared/components/layout/layout.component';
 
+
+
+
 export const routes: Routes = [
   {
     path: '',
@@ -9,8 +12,13 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadComponent: () => import('./domains/paginas/paginicio/paginicio.component').then(m => m.PaginicioComponent),
+        loadComponent: () => import('./domains/paginas/paginicio/paginicio.component').then(m => m.PagInicioComponent),
         data: { hostAttr: 'paginicio-component' }
+      },
+      {
+        path:'cita',
+        loadComponent: () => import('./domains/paginas/pagcita/pagcita.component').then(m => m.PagcitaComponent),
+        data: { hostAttr: 'pagcita-component' }
       }
     ]
   },

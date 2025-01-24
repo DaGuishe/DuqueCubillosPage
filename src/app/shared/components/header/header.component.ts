@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterLinkWithHref, RouterLinkActive } from '@angular/router';
+import { RouterLinkWithHref } from '@angular/router';
 import { UpperCasePipe } from '@angular/common';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLinkWithHref, RouterLinkActive, UpperCasePipe, CommonModule],
+  imports: [RouterLinkWithHref, UpperCasePipe, CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

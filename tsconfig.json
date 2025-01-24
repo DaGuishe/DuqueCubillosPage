@@ -8,12 +8,14 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
+
     "isolatedModules": true,
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "moduleResolution": "bundler",
+    "moduleResolution": "node10",
     "importHelpers": true,
-    "target": "ES2022",
+    "types": ["node"],
+    "target": "ES2015",
     "module": "ES2022"
   },
   "angularCompilerOptions": {

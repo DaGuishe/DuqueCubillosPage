@@ -1,51 +1,54 @@
 <nav
-  class="fixed top-0 left-0 right-0 w-full bg-[#F7F7F7] border-b border-[#D4AF37] z-50"
+  class="fixed top-0 left-0 right-0 w-full bg-[#F7F7F7] border-b-[2px] border-[#D4AF37] z-50"
   style="min-height: 70px;"
 >
-  <div class="flex items-center justify-between max-w-screen-xl mx-auto px-4 lg:px-8 h-full">
-    <!-- Contenedor del logo y textos -->
-    <div class="flex items-center space-x-4 lg:space-x-6 flex-shrink-0">
-      <!-- Logo -->
+  <div class="flex items-center justify-between px-4 sm:px-6 lg:px-[29px] h-full">
+    <!-- Logo y línea divisoria -->
+    <div class="flex items-center space-x-2 flex-shrink-0">
       <a href="/" class="flex items-center">
         <img
           src="LogoDQNegroNB.png"
-          class="h-10 lg:h-14 w-auto"
+          class="h-8 sm:h-10 lg:h-14 w-auto"
           alt="Logo DuqueCubillos"
         />
       </a>
-      <!-- Barra vertical -->
-      <div class="hidden lg:block w-[2px] h-12 lg:h-14 bg-[#D4AF37]"></div>
-      <!-- Textos -->
-      <div class="hidden lg:flex items-center space-x-6">
-        <ng-container *ngFor="let item of menuItems">
-          <div class="group flex items-center space-x-2">
-            <!-- Diamante -->
-            <span
-              class="h-2 w-2 bg-[#1C1C1C] group-hover:bg-[#D4AF37] rotate-45 block"
-            ></span>
-            <!-- Texto -->
-            <a
-              href="{{ item.link }}"
-              class="text-[#1C1C1C] group-hover:text-[#D4AF37] text-[clamp(12px,1vw,14px)] font-medium truncate"
-            >
-              {{ item.label }}
-            </a>
-          </div>
-        </ng-container>
-      </div>
+      <!-- Línea divisoria -->
+      <div class="hidden lg:block w-[2px] h-12 lg:h-[70px] bg-[#D4AF37] lg:mr-4 " style="margin-right: 10px;"></div>
     </div>
 
-    <!-- Botones a la derecha (siempre visibles) -->
-    <div class="flex items-center ml-auto space-x-3">
+    <!-- Menú de textos (visible solo en pantallas grandes) -->
+    <div
+      class="hidden lg:flex flex-2 top-[24px] left-[24px] space-x-3 truncate"
+      style="max-width: calc(100% - 200px);"
+    >
+      <ng-container *ngFor="let item of menuItems">
+        <div class="group flex items-center space-x-2">
+          <!-- Diamante -->
+          <span
+            class="h-2 w-2 bg-[#1C1C1C] group-hover:bg-[#D4AF37] rotate-45 block"
+          ></span>
+          <!-- Texto -->
+          <a
+            href="{{ item.link }}"
+            class="text-[#1C1C1C] group-hover:text-[#D4AF37] font-medium truncate text-[clamp(10px,1vw,14px)]"
+          >
+            {{ item.label }}
+          </a>
+        </div>
+      </ng-container>
+    </div>
+
+    <!-- Botones a la derecha -->
+    <div class="flex items-center ml-auto space-x-3 h-full">
       <a
-        href="#"
-        class="border border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-[#F7F7F7] focus:ring-[#D4AF37] font-medium rounded-lg text-[clamp(10px,1vw,14px)] px-3 py-2"
+        href="https://cubillosduqueasociados.com/"
+        class="border border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-[#F7F7F7] focus:ring-[#D4AF37] font-medium rounded-lg text-[clamp(10px,1vw,14px)] px-3 py-2 whitespace-nowrap"
       >
         {{ 'Remates Inmobiliarios' | uppercase }}
       </a>
       <a
-        href="#"
-        class="bg-[#D4AF37] text-[#1C1C1C] hover:text-[#F7F7F7] hover:bg-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37] font-medium rounded-lg text-[clamp(10px,1vw,14px)] px-3 py-2"
+        [routerLink]="['/cita']"
+        class="bg-[#D4AF37] text-[#1C1C1C] hover:text-[#F7F7F7] hover:bg-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37] font-medium rounded-lg text-[clamp(10px,1vw,14px)] px-3 py-2 whitespace-nowrap"
       >
         {{ 'Agenda Tu Cita' | uppercase }}
       </a>
@@ -55,7 +58,7 @@
         class="ml-2 lg:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100 focus:ring-2 focus:ring-gray-300"
         (click)="toggleMenu()"
       >
-        <span class="sr-only">Open menu</span>
+        <span class="sr-only">Abrir menú móvil</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="h-6 w-6"
@@ -74,8 +77,11 @@
     </div>
   </div>
 
-  <!-- Menú móvil -->
-  <div *ngIf="isMenuOpen" class="lg:hidden mt-2 px-4">
+  <!-- Menú móvil desplegable (visible en pantallas pequeñas) -->
+  <div
+    *ngIf="isMenuOpen"
+    class="lg:hidden mt-2 px-4 bg-[#F7F7F7] border-t border-[#D4AF37] py-4"
+  >
     <ul class="flex flex-col space-y-4">
       <ng-container *ngFor="let item of menuItems">
         <li class="group flex items-center space-x-2">
@@ -84,7 +90,7 @@
           ></span>
           <a
             href="{{ item.link }}"
-            class="text-[#1C1C1C] group-hover:text-[#D4AF37] text-xs font-medium truncate"
+            class="text-[#1C1C1C] group-hover:text-[#D4AF37] text-sm font-medium truncate"
           >
             {{ item.label }}
           </a>

@@ -1,0 +1,4 @@
+/* Reglas personalizadas para los placeholders */
+input::placeholder {
+    font-style: italic;
+  }

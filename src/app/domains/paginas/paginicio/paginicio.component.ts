@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { SliderComponent } from './slider/slider.component';
 
 @Component({
   selector: 'app-paginicio',
-  imports: [],
   templateUrl: './paginicio.component.html',
-  styleUrl: './paginicio.component.css'
+  styleUrls: ['./paginicio.component.css'],
+  standalone: true,
+  imports: [SliderComponent], // Importamos el slider
 })
-export class PaginicioComponent {
-
-}
+export class PagInicioComponent {}

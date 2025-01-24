@@ -1,21 +1,18 @@
-<div class="min-h-screen flex flex-col">
+<div class="flex flex-col">
   <!-- Contenido Principal -->
-  <main class="flex-grow">
-    <!-- Aquí va tu contenido -->
-  </main>
 
   <!-- Footer -->
   <footer class="bg-[#F7F7F7] border-t border-[#D4AF37] w-full">
-    <div class="px-4 lg:px-8 py-6">
+    <div class="px-[16px] lg:px-[29px] py-[16px]">
       <!-- Parte Superior -->
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full">
-        <!-- Logo -->
-        <a href="/" class="flex items-center mb-4 sm:mb-0">
+        <!-- Logo alineado a la izquierda -->
+        <a href="/" class="flex items-center mb-4 sm:mb-0 justify-start">
           <img src="LogoDQNegroNB.png" class="h-10 lg:h-14 w-auto" alt="Logo DuqueCubillos" />
         </a>
 
-        <!-- Enlaces -->
-        <ul class="flex flex-wrap items-center text-sm font-medium text-[#1C1C1C] space-x-4 sm:space-x-6">
+        <!-- Enlaces alineados a la derecha -->
+        <ul class="flex flex-col items-end text-right sm:flex-row sm:items-center sm:justify-between sm:space-x-6 space-y-2 sm:space-y-0 text-[clamp(10px,0.8vw,12px)] font-medium text-[#1C1C1C]">
           <li>
             <a href="#" class="hover:text-[#D4AF37] transition">Quienes Somos</a>
           </li>
@@ -32,12 +29,20 @@
       </div>
 
       <!-- Separador -->
-      <hr class="my-6 border-t border-[#D4AF37]" />
+      <hr class="my-[12px] border-t border-[#D4AF37]" />
 
-      <!-- Parte Inferior -->
-      <span class="block text-sm text-[#1C1C1C] text-center">
-        © 2025 <a href="/" class="hover:text-[#D4AF37] transition">Duque Cubillos™</a>. Todos los derechos reservados.
-      </span>
+      <!-- Parte Inferior del Footer -->
+<div class="flex flex-wrap justify-between items-center text-[clamp(10px,0.7vw,12px)] text-[#1C1C1C] px-4 sm:px-6 lg:px-8">
+  <!-- Izquierda -->
+  <span class="block">
+    {{'Contratanos ' }} <a [routerLink]="['/cita']" class="hover:text-[#D4AF37] transition">{{'Ahora' | uppercase }}</a>.             © 2025 Duque Cubillos Asociados™
+  </span>
+
+  <!-- Derecha -->
+  <span class="block">
+    {{'Contacta nuestro servicios '}} <a href="https://wa.me/573212072537?text=Me%20encontraba%20en%20su%20p%C3%A1gina%20y%20desear%C3%ADa%20resolver%20mi%20caso%20con%20ustedes." class="hover:text-[#D4AF37] transition">{{' Aqui' | uppercase}}</a>
+  </span>
+</div>
     </div>
   </footer>
 </div>
