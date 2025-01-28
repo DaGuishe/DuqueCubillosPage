@@ -7,6 +7,6 @@ import { CampexpComponent } from './campexp/campexp.component';
   templateUrl: './paginicio.component.html',
   styleUrls: ['./paginicio.component.css'],
   standalone: true,
-  imports: [SliderComponent, CampexpComponent], // Importamos el slider
+  imports: [ CampexpComponent], // Asegurar correctamente las importaciones
 })
 export class PagInicioComponent {}
