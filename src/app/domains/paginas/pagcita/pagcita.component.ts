@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
-import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-pagcita',
-  imports: [CommonModule, FormsModule, UpperCasePipe],
+  imports: [CommonModule, FormsModule],
   templateUrl: './pagcita.component.html',
   styleUrl: './pagcita.component.css'
 })
