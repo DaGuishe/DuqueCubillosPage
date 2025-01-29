@@ -1,10 +1,7 @@
-
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { interval, Subscription } from 'rxjs';
-
-
-import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -13,7 +10,7 @@ import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
   styleUrls: ['./slider.component.css'],
   standalone: true,
 })
-export class SliderComponent implements OnInit, OnDestroy {
+export class SliderComponent implements OnDestroy {
   currentSlide = 0;
   slides = [
     { title: 'Diapositiva 1', text: 'Texto para la primera diapositiva' },
@@ -21,11 +18,12 @@ export class SliderComponent implements OnInit, OnDestroy {
   ];
   private slideSubscription!: Subscription;
 
-  ngOnInit() {
+  ngAfterViewInit() {
     this.slideSubscription = interval(5000).subscribe(() => {
       this.nextSlide();
     });
   }
+
 
   ngOnDestroy() {
     if (this.slideSubscription) {
